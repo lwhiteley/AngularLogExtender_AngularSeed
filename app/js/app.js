@@ -18,7 +18,7 @@ myApp.config([ 'logExProvider', function(logExProvider) {
 
         var formatMessage = "";
         var separator = " >> ";
-        var format = "MMM-dd-yyyy-h:mm:ssa";
+        var format = "MMMM-dd-yyyy-h:mm:ssa";
         var now = $filter('date')(new Date(), format);
         return "" + now + (className === null ? "" : "::" + className) + separator;
     });
