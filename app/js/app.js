@@ -6,7 +6,23 @@ var myApp = angular.module('myApp', ['ngRoute', 'log.extension.uo']);
 
 
 myApp.config([ 'logExProvider', function(logExProvider) {
+
     logExProvider.enableLogging(true);
+
+//    logExProvider.restrictLogMethods(['log', 'info', 'warn', 'debug', 'error', 'getInstance']);
+
+    logExProvider.overrideLogPrefix(function (className) {
+
+        var $injector = angular.injector([ 'ng' ]);
+        var $filter = $injector.get( '$filter' );
+
+        var formatMessage = "";
+        var separator = " >> ";
+        var format = "MMM-dd-yyyy-h:mm:ssa";
+        var now = $filter('date')(new Date(), format);
+        return "" + now + "::" + (className === null ? "" : className) + separator;
+    });
+
 }]);
 
 
