@@ -9,7 +9,7 @@ myApp.config([ 'logExProvider', function(logExProvider) {
 
     logExProvider.enableLogging(true);
 
-//    logExProvider.restrictLogMethods(['log', 'info', 'warn', 'debug', 'error', 'getInstance']);
+    logExProvider.restrictLogMethods(['log', 'info']);
 
     logExProvider.overrideLogPrefix(function (className) {
 
