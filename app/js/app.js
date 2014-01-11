@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-var myApp = angular.module('myApp', ['ngRoute', 'log.extension.uo']);
+var myApp = angular.module('myApp', ['ngRoute', 'log.ex.uo']);
 
 
 myApp.config([ 'logExProvider', function(logExProvider) {
